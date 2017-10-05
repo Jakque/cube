@@ -49,7 +49,7 @@ def nouvelle_position(cube,mouv):
 
 ################################################################################
 
-def optimisation(sequence): #annule dans la sequence finale les coups en double
+def optimisation(sequence): #on simplifie la sequence finale pour éviter les coups inutiles
     i=0
     while i<len(sequence)-1:
         if sequence[i]==-sequence[i+1]: #stocker les differents mouvements sous la forme de nombres tels que mouv inverse = -mouv
