@@ -55,6 +55,13 @@ def optimisation(sequence): #annule dans la sequence finale les coups en double
         if sequence[i]==-sequence[i+1]: #stocker les differents mouvements sous la forme de nombres tels que mouv inverse = -mouv
             sequence.pop(i)
             sequence.pop(i)
-            i=-1
-        i+=1
+            if i>0:
+                i=-1
+        elif sequence[i-1]==sequence[i]==sequence[i+1] and i>0: #si 3 mêmes doivent être joués successivement, remplacer par -coup
+            sequence[i-1]*=-1
+            sequence.pop(i)
+            sequence.pop(i)
+            i-=1
+        else:
+            i+=1
     return sequence
