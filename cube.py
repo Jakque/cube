@@ -31,7 +31,7 @@ def tourner(a,b,sens): # a = choix de l'axe, b = choix de la face sur l'axe, sen
     sens *= b
     for i in cube:
         if i[a]==b:
-            cube[i][a+1],cube[i][a-1] = cube[i][a-1],cube[i][a+1]
+            cube[i][a-1],cube[i][a-2]=cube[i][a-2],cube[i][a-1]
 
     if a==0: #axe verical
         cube[b,1,1],cube[b,sens,-sens],cube[b,-1,-1],cube[b,-sens,sens] = cube[b,sens,-sens],cube[b,-1,-1],cube[b,-sens,sens],cube[b,1,1]
